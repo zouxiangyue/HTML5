@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>会员注册表单</title>
+		<style>
+			body{
+				width:500px
+			}
+			legend,span{
+				color:red
+			}
+		</style>
+		<script>
+		  window.onload=function(){
+		  	var re=/[0-9]+/
+			var email=document.getElementById('email');
+			var list=document.getElementById('emailList');
+			email.onkeyup=function(){
+				if(re.test(email.value)){
+					for(var i=0;i<5;i++){
+						list.children[i].value=list.children[i].value.replace(/\d+/,email.value);
+						
+					}
+				}
+			}
+			var m=document.getElementById('money');
+			var list2=document.getElementById('moneyList');
+			money.onkeyup=function (){
+				if(re.test(money.value)){
+					for(var i=0;i<5;i++){
+						list2.children[i].value=list2.children[i].value.replace(/\d+/,money.value);
+						
+					}
+				}
+			}
+		  }
+		  
+		</script>
+	</head>
+	<body>
+		<h3>请填写个人信息</h3>
+		<fieldset>
+			<legend>基本信息</legend>
+			姓名:<input type='text' required="required" placeholder="请输入姓名"><span>*</span>
+			<br/>
+			年龄:<input type='number' min='0' max='100' step='1' placeholder="20"/>
+		</fieldset>
+		<br/>
+		<fieldset>
+			<legend>你想要在哪里收到邮件?</legend>
+			邮箱:<input type="email" id='email'  placeholder="请输入邮箱" autocomplete="on"  list='emailList' results><span>*</span>
+		</fieldset>
+		<datalist id='emailList'>
+			<option>123@qq.com</option>
+			<option>123@163.com</option>
+			<option>123@gmail.com</option>
+			<option>123@yehoo.com.cn</option>
+			<option>123@126.com</option>
+		</datalist>
+		<br/>
+		<fieldset>
+			<legend>收入状况</legend>
+			月收入<input type='text' id='money' placeholder='20k+'  autocomplete="on"  list='moneyList' results/><br/>
+			<datalist id='moneyList'>
+			    <option>20+</option>
+			    <option>20+</option>
+		    </datalist>
+			银行卡<input type='number'/>
+			有效期<input type='date'/>
+		</fieldset>
+		<br/>
+		<fieldset>
+			<legend>选取提交文件</legend>
+			文件<input type='file' multiple="multiple"/>
+		</fieldset>
+		<br/>
+		<input type='submit'>
+	</body>
+</html>
