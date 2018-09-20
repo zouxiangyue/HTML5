@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>页面换肤</title>
+		<style>
+			fieldset{
+				width: 500px;
+			}
+			legend{
+				color:red;
+				font-size: 30px;
+			}
+			#colors{
+				border:2px solid gainsboro;
+				height:50px;
+			}
+			p{
+				height:20px;
+				width: 20px;
+				float:left;
+				margin:15px;
+			}
+			article{
+				padding:10px
+			}
+			.top{
+				margin-top:10px
+			}
+		</style>
+	</head>
+	<script>
+		window.onload=function(){
+			var colors=document.getElementById('colors')
+	        var p=document.getElementsByTagName('p');
+	        var art=document.getElementById('art');
+	        var changeColor=function(event){
+	        	var color=event.target.style.backgroundColor
+	        	art.style.backgroundColor=color;
+	        	if(localStorage.colorCount){
+	        		localStorage.colorCount=Number(localStorage.colorCount)+1;
+	        	}else{
+	        		localStorage.colorCount=1
+	        	};
+	            localStorage[localStorage.colorCount]=color;
+	            for(var i=0;i<p.length;i++){
+	            	p[i].className=''
+	            }
+	            event.target.className='top';
+	        };
+	        if(localStorage.colorCount){
+	        	art.style.backgroundColor=localStorage[localStorage.colorCount]
+	        }else{
+	        	art.style.backgroundColor='gray';
+	        }
+	        for(var i=0;i<7;i++){
+	        	p[i].addEventListener('click',changeColor);
+	        };
+	    }
+	        
+		
+	</script>
+	<body>
+		<fieldset>
+			<legend><strong>页面换肤</strong></legend>
+			<div id='colors'>
+				<p style='background-color: wheat;'></p>
+				<p style='background-color: red;'></p>
+				<p style='background-color: blue;'></p>
+				<p style='background-color: powderblue;'></p>
+				<p style='background-color: palegreen;'></p>
+				<p style='background-color: lightcyan;'></p>
+				<p style='background-color: green;'></p>
+			</div>
+			<br/>
+			<article id='art' style='background-color: gray;'>
+			    localStorage将数据保存在客户端本地的硬件设备中,
+				即将浏览器该数据仍然存在
+				下次打开浏览访问网站时仍然可以继续使用.
+           </article>
+		</fieldset>
+	</body>
+</html>
