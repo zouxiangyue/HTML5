@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上传头像</title>
+		<style>
+			div,img{
+				height: 300px;
+				width: 300px;
+			}
+			div{
+				border:solid black 1px;
+			}
+		</style>
+		<script>
+			window.ondragover=function(e){
+				var dragdiv=document.getElementById('dragdiv');
+				var i=document.getElementsByTagName('img');
+				e.preventDefault();
+			    dragdiv.addEventListener('dragover',function(){
+			    	e.preventDefault();
+                    
+			    },false)
+			    
+			    dragdiv.ondrop=function(e){
+			        e.preventDefault();
+			        var img=e.dataTransfer.files;
+                    var reader=new FileReader();
+                    console.log(img)
+                    reader.readAsDataURL(img[0]);
+                    reader.onload=function(){
+                    	var data=this.result; //获得图片的路径
+                    	//console.log(data);
+                    	var img=document.createElement('img');//在div下添加图片
+                    	dragdiv.appendChild(img);
+                    	img.src=data;
+                    };
+                    
+                    
+			    }
+			}
+		</script>
+	</head>
+	<body>
+		<h2>上传头像</h2>
+		<div id='dragdiv'>
+			
+		</div>
+	</body>
+</html>
