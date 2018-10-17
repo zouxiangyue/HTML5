@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>七巧板</title>
+	</head>
+	<style>
+		#c{
+			
+		} 
+	</style>
+	<body>
+		<canvas id='c' width='500' height='500'></canvas>
+	</body>
+	<script>
+		var c=document.getElementById('c');
+		var context=c.getContext('2d');
+		context.beginPath();
+		context.moveTo(0,0);
+		context.lineTo(150,150);
+		context.lineTo(0,300);
+		context.lineTo(0,0)
+		context.strokeStyle='deepskyblue';
+		context.fillStyle='deepskyblue';
+		context.stroke();
+		context.fill();
+		context.closePath();
+		
+		context.beginPath();
+		context.moveTo(0,0);
+		context.lineTo(150,150);
+		context.lineTo(300,0);
+		context.strokeStyle='greenyellow';
+		context.fillStyle='greenyellow';
+		context.stroke();
+		context.fill();
+		context.closePath();
+		
+		context.beginPath();
+		context.moveTo(0,300);
+		context.lineTo(150,300);
+		context.lineTo(75,225);
+		context.strokeStyle='cornflowerblue';
+		context.fillStyle='cornflowerblue';
+		context.stroke();
+		context.fill();
+		context.closePath();
+		
+		context.beginPath();
+		context.moveTo(150,300);
+		context.lineTo(225,225);
+		context.lineTo(150,150);
+		context.lineTo(75,225)
+		context.strokeStyle='blueviolet';
+		context.fillStyle='blueviolet';
+		context.stroke();
+		context.fill();
+		context.closePath();
+		
+		context.beginPath();
+		context.moveTo(225,225);
+		context.lineTo(225,75);
+		context.lineTo(150,150);
+		context.strokeStyle='green';
+		context.fillStyle='green';
+		context.stroke();
+		context.fill();
+		context.closePath();
+		
+		context.beginPath();
+		context.moveTo(225,225);
+		context.lineTo(300,150);
+		context.lineTo(300,0);
+		context.lineTo(225,75)
+		context.strokeStyle='blue';
+		context.fillStyle='blue';
+		context.stroke();
+		context.fill();
+		context.closePath();
+		
+		context.beginPath();
+		context.moveTo(150,300);
+		context.lineTo(300,300);
+		context.lineTo(300,150);
+		context.strokeStyle='palegreen';
+		context.fillStyle='palegreen';
+		context.stroke();
+		context.fill();
+		context.closePath();
+	</script>
+</html>

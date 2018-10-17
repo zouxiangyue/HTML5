@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>五角星</title>
+		<style>
+			#can1{
+				border:solid red 1px
+
+				
+			}
+		</style>
+		
+	</head>
+	<body>
+		<canvas id="can1" width="400" height="400"></canvas>
+		<script>
+			var can=document.getElementById('can1');
+			var context=can.getContext('2d');
+			var P=Math.PI;
+			
+			
+			context.moveTo(200,100);
+			
+			for(var i=0;i<5;i++){
+				
+				context.lineTo(Math.cos(Math.PI*(54-72*i)/180)*20+200,
+				   200-Math.sin(Math.PI*(54-72*i)/180)*20);
+				
+				context.lineTo(Math.cos((18-72*i)/180*Math.PI)*100+200,
+				200-Math.sin((18-72*i)/180*Math.PI)*100);
+				//if(i==1)break;
+			}
+			context.lineWidth=3;
+			context.strokeStyle='red'
+			context.fillStyle='yellow'
+			context.fill()
+			context.stroke();
+			//console.log(Math.sin(Math.PI*(54)/180))
+		</script>
+	</body>
+</html>

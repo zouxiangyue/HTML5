@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>五角星</title>
+		<style>
+			#canvas2{
+				border:solid red 1px;			}
+		</style>
+	</head>
+	<body>
+		<canvas id='canvas2' width='500' height='500'>
+			
+		</canvas>
+		<script>
+			var canvas2=document.getElementById('canvas2');
+			var context=canvas2.getContext('2d');
+			
+			context.moveTo(10,69);
+			context.lineTo(200,69);
+			context.lineTo(46,181);
+			context.lineTo(105,0);
+			context.lineTo(164,181);
+			context.lineTo(10,69);
+			context.fillStyle='yellow'
+			context.fill();
+			context.stroke();
+		</script>
+	</body>
+</html>

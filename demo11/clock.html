@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>钟表</title>
+		<style>
+			#canvas1 {
+				border: solid red 1px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id='canvas1' width='400' height="400">
+			
+		</canvas>
+		<script>
+			var can = document.getElementById('canvas1');
+			var context = can.getContext('2d');
+			context.translate(200, 200)
+
+			setInterval(function() {
+				context.clearRect(-200, -200, context.canvas.width, context.canvas.height);
+				//时钟外圈
+				context.beginPath();
+				context.strokeStyle = 'greenyellow'
+				context.lineWidth = 3;
+				context.arc(0, 0, 100, 0, 0.0001 * Math.PI, true);
+				context.stroke();
+				context.closePath();
+				
+				context.save();
+				//时钟刻度
+				for(var i = 0, j = 12; i < 60; i++) {
+					context.beginPath();
+					if(i > 0) {
+						context.rotate(6 * Math.PI / 180);
+					}
+					if(i % 5 == 0) {
+						context.fillStyle = 'red';
+						context.fillRect(-2, -90, 4, 12);
+					} else {
+						context.fillStyle = 'black'
+						context.fillRect(-1, -89, 2, 8)
+					};
+					context.closePath();
+				}
+				context.restore();
+				//时钟数字
+			    context.beginPath();
+			    for(var j=1,a=0;j<13;j++){
+			    	context.fillStyle='red';
+			    	context.font = "13px 宋体";
+			    	var i=0; //i数字度数偏移量
+			    	if(j<7)i=30.5
+			    	else i=29.5;
+			        context.fillText(j,(65+a)*Math.cos((90-i*j)*Math.PI/180)
+			                    ,-(65+a)*Math.sin((90-i*j)*Math.PI/180))
+			        if(j<10)a=a+1  //a 数字半径偏移量
+			        else a=2
+			    }
+				var date = new Date();
+				//console.log(date)
+				var h = date.getHours();
+				var m = date.getMinutes();
+				var s = date.getSeconds();
+				//时针
+				context.save();
+				context.lineWidth = 4;
+				context.beginPath();
+				context.rotate((h % 12* 30+0.5*m) * Math.PI / 180);
+				context.strokeStyle = 'pink'
+				context.moveTo(0, 10);
+				context.lineTo(0, -50);
+				context.stroke();
+				context.restore();
+				//分针
+				context.save();
+				context.lineWidth = 3;
+				context.beginPath();
+				context.rotate((m * 6+0.1*s) * Math.PI / 180);
+				context.strokeStyle = 'cornflowerblue'
+				context.moveTo(0, 10);
+				context.lineTo(0, -60);
+				context.stroke()
+				context.restore();
+				//秒针
+				context.save();
+				context.beginPath();
+				context.lineWidth = 2;
+				context.rotate(6 * s * Math.PI / 180);
+				context.strokeStyle = 'red'
+				context.moveTo(0, 10);
+				context.lineTo(0, -70);
+				context.stroke();
+				context.closePath();
+				//秒针圆圈
+				context.beginPath();
+				context.arc(0, -50, 3, 0, 0.0001 * Math.PI, true);
+				context.fillStyle='black'
+				context.fill();
+				//console.log(s);
+				context.stroke();
+				context.closePath();
+				context.restore();
+								
+				context.save();
+				context.beginPath();
+				context.arc(0, 0, 3, 0, 0.0001 * Math.PI, true);
+				context.lineWidth=2;
+				context.strokeStyle='red'
+				context.fillStyle='black'
+				context.fill();
+				context.stroke();
+				context.closePath();
+			}, 1000)
+		</script>
+	</body>
+
+</html>

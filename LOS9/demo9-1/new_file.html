@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>carousel</title>
+    <style type="text/css">
+        #div01{
+            width:1000px;
+            white-space:nowrap;
+            overflow:hidden;
+            /* position: relative; */
+            /* left:200px; */
+            font-size:0px;
+        }
+        img{
+            width:1000px;
+            margin:0px;
+            padding:0px;
+            height:300px;
+            white-space:nowrap;
+            /* position: relative;
+            float:left; */
+        }
+        #ul1 li{
+            float:left;
+            position: relative;
+            width:30px;
+            height:20px;
+            color: white;
+            font-size:40px;
+        }
+        #ul1{
+            margin: 0px;
+            /* float: left; */
+            position: relative;;
+            top:-50px;
+            left:400px;
+        }
+        #ul2{
+            float:left;
+            position: relative;
+            top:-200px;
+            left:-200px;
+        }
+        #ul2 li{
+            margin:0px;
+            float:left;
+            position: relative;
+            list-style-type: none;
+            color: white;
+            font-size: 50px;
+        }
+        #ul2 #lib{
+            left:860px;
+        }
+    </style>
+    
+</head>
+<body  onload="animate()">
+    <div id="div01">
+        <img src="img/banner_01.jpg">
+        <img src="img/banner_02.jpg">
+        <img src="img/banner_03.jpg">
+        <img src="img/banner_04.jpg">
+        <img src="img/banner_05.jpg">
+        <img src="img/banner_01.jpg">
+        <img src="img/banner_02.jpg">
+        <img src="img/banner_03.jpg">
+        <img src="img/banner_04.jpg">
+        <img src="img/banner_05.jpg">      
+    </div>
+    <ul id="ul1">
+        <li onclick='change("li1")'></li>
+        <li onclick='change("li2")'></li>
+        <li onclick='change("li3")'></li>
+        <li onclick='change("li4")'></li>
+        <li onclick='change("li5")'></li>
+    </ul>
+    <ul id="ul2">
+        <li id="lia" onclick='movement("lia")'><</li>
+        <li id="lib" onclick="movement('lib')">></li>
+    </ul>
+</body>
+<script type="text/javascript">
+    var div01=document.getElementById("div01");
+    //console.log("hhh"+div01.scrollLeft);
+    div01.scrollLeft=0;
+    var arr=document.getElementsByTagName("img");
+    var width=arr[0].width; 
+    var a=0;
+    function move(){
+        var arrli=document.getElementById('ul1').children;
+        for(var i=0;i<arrli.length;i++){
+            arrli[i].style.color= "white";
+        }
+        console.log((parseInt(div01.scrollLeft/1000))%5);
+        arrli[(parseInt(div01.scrollLeft/1000))%5].style.color="red";          
+        if(div01.scrollLeft==((arr.length-1)*width)){
+            div01.scrollLeft=0;
+        }
+        else if(div01.scrollLeft%1000==0)
+        {
+            if(a<10)
+            
+            {a++;console.log(a);}
+            else
+            {a=0;div01.scrollLeft+=(width/5);}
+        }
+        else{
+            div01.scrollLeft+=(width/5); 
+            console.log(div01.scrollLeft);                            
+        }
+        
+    }
+    function  animate(){
+        //var timer;
+        if(timer){clearInterval(timer);}
+        else{
+          var timer=setInterval("move()",200);
+        }
+        
+    }
+    function  change(e){
+        num=parseInt(e.substr(-1,1));
+        console.log(num);
+        div01.scrollLeft=(num-1)*width;
+        console.log('lll'+div01.scrollLeft);
+    }
+    function movement(e){
+        if(e.substr(-1,1)=='a'){
+            div01.scrollLeft=div01.scrollLeft-width;
+        }
+        else{
+            div01.scrollLeft+=width;
+        }
+    }   
+</script>
+</html>

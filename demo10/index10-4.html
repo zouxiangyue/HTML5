@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			
+		</title>
+		<style>
+			#c1{
+				border:solid paleturquoise 1px;
+				
+			}
+			#c2{
+				border:solid paleturquoise 1px;
+				background-color: goldenrod;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='c1' width='300' height='300'>
+			
+		</canvas>
+		<canvas id='c2' width='300' height='300'>
+			
+		</canvas>
+		<script>
+			var c1=document.getElementById('c1');
+			var c2=document.getElementById('c2');
+			var context1=c1.getContext('2d');
+			var context2=c2.getContext('2d');
+			for(var i=0;i<201;i=i+20){
+				context1.beginPath();
+			    context1.lineWidth=2
+			    context1.strokeStyle='palegreen'
+			    context1.arc(0,300,100+i,0,1.5*Math.PI,true);
+			    context1.stroke();
+			    context1.closePath()
+			}
+			context2.beginPath();
+			//context2.lineWidth=1
+		    context2.strokeStyle='whitesmoke'
+			context2.arc(150,150,50,0.5*Math.PI,1.5*Math.PI,true);
+			context2.fillStyle='whitesmoke'
+			context2.stroke();
+			context2.fill();
+			context2.closePath();
+			
+			context2.beginPath();
+			context2.lineWidth=1
+			//context2.strokeStyle='black'
+			context2.arc(150,175,25,0.5*Math.PI,1.5*Math.PI,true);
+			context2.fillStyle='black'
+			context2.fill();
+			context2.stroke();
+			context2.closePath();
+			
+			context2.beginPath();
+			context2.lineWidth=1;
+			context2.strokeStyle='black'
+			context2.arc(150,150,50,0.5*Math.PI,1.5*Math.PI,false);
+			context2.fillStyle='black'
+			context2.fill();
+			context2.stroke();
+			context2.closePath();
+			
+			context2.beginPath();
+			context2.lineWidth=1
+			//context2.strokeStyle='whitesmoke'
+			context2.arc(150,125,25,0.5*Math.PI,1.5*Math.PI,false);
+			context2.fillStyle='whitesmoke'
+			context2.stroke();
+			context2.fill();
+			context2.closePath();
+			
+			context2.beginPath();
+			context2.lineWidth=1
+			context2.strokeStyle='black'
+			context2.arc(150,125,2,0*Math.PI,0.001*Math.PI,true);
+			context2.fillStyle='black'
+			context2.stroke();
+			context2.fill();
+			context2.closePath();
+			
+			context2.beginPath();
+			context2.lineWidth=1
+			context2.strokeStyle='white'
+			context2.arc(150,175,2,0*Math.PI,0.001*Math.PI,true);
+			context2.fillStyle='whitesmoke'
+			context2.stroke();
+			context2.fill();
+			context2.closePath();
+		</script>
+	</body>
+</html>
