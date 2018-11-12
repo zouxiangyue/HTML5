@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Bootstrap响应式布局</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+
+	<body>
+		<!--导航栏-->
+		<nav class='navbar navbar-inverse' role='navigation' style="margin: 0px;border-radius: 0px;">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-1">
+		      <span class="sr-only">Toggle navigation</span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		     </button>
+				<a class="navbar-brand" href="#">
+					<span class='glyphicon glyphicon-bell'>Bootstrap</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id='bs-1'>
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="#">Color</a>
+					</li>
+					<li>
+						<a href="#">Link</a>
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!--轮播图-->
+		<div id='generic' class='carousel slide' data-ride='carousel'>
+			<div class='carousel-inner'>
+				<div class="item active">
+					<img alt="First slide" src="img/banner1.jpg">
+					<div class="carousel-caption">
+						<h3>轮播图1</h3>
+						<p>Quickly prototype your ideas or build your entire app with our Sass variables and mixins</p>
+					</div>
+				</div>
+				<div class="item">
+					<img alt="Second slide" src="img/banner2.jpg">
+					<div class="carousel-caption">
+						<h3>轮播图2</h3>
+						<p>Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.</p>
+					</div>
+				</div>
+				<div class="item">
+					<img alt="third slide" src="img/banner3.jpg">
+					<div class="carousel-caption">
+						<h3>轮播图2</h3>
+						<p>Build responsive, mobile-first projects on the web with the world's most
+							 popular front-end component library.</p>
+					</div>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#generic" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#generic" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+		<!--内容-->
+		<div class='container'>
+			<div class='row' style='margin-top:15px'>
+				<div class='col-md-4'>
+					<caption><span class='h3'>By nerds  </span>the first</caption>
+					<p>
+						Built at Twitter by @mdo and @fat, Bootstrap utilizes LESS CSS, is compiled via Node, and is managed through GitHub to nerds do awesome stuff on the web.
+					</p>
+				</div>
+				<div class='col-md-4'>
+					<caption><span class='h3'>Made for  </span>the second</caption>
+					<p>
+						Bootstrap was made to not only look and behave great in the latest desktop browsers (as well as IE7!), but in tablet and smartphone browsers via responsive CSS as well.
+					</p>
+				</div>
+				<div class='col-md-4'>
+					<caption><span class='h3'>Packed  </span>the third</caption>
+					<p>
+						A 12-column responsive grid, dozens of components, JavaScript plugins, typography, form controls, and even a web-based Customizer to make Bootstrap your own.
+					</p>
+				</div>
+			</div>
+			<div class='table-responsive'>
+				<table class='table table-hover'>
+					<caption><span class='h3'>Report table  </span>From Detail</caption>
+					<thead>
+						<tr class='active'>
+							<th>#</th>
+							<th>first</th>
+							<th>second</th>
+							<th>third</th>
+							<th>forth</th>
+							<th>fifth</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>penatibus et magnis</td>
+							<td>what</td>
+							<td>message</td>
+							<td>55</td>
+							<td>
+								<button class='btn btn-success'>
+									提交
+			                    </button>
+							</td>
+						</tr>
+						<tr class='active'>
+							<td>2</td>
+							<td>penatibus et</td>
+							<td>you</td>
+							<td>information</td>
+							<td>44</td>
+							<td>
+								<button class='btn btn-success'>
+									提交
+			                    </button>
+							</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>nuila non</td>
+							<td>lest</td>
+							<td>testing</td>
+							<td>32</td>
+							<td>
+								<button class='btn btn-success'>
+									提交
+			                    </button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class='row' style='margin-bottom: 15px;'>
+				<div class='col-md-6'>
+					<img src="img/pic.jpg">
+				</div>
+				<div class='col-md-6'>
+					<p class='h3'>
+						Before downloading, be sure to have a code editor (we recommend Sublime Text 2)
+					</p>
+					<p>
+						 We won't walk through the source files here, but they are available for download. We'll focus on getting started with the compiled Bootstrap files.
+					</p>
+					<ul class='list-group col-md-6' style='list-style: none;'>
+						<li>Maecennas sed diam egent risus</li>
+						<li>Maecennas sed diam egent risus</li>
+						<li>Maecennas sed diam egent risus</li>
+						<li>Maecennas sed diam egent risus</li>
+						<li>Maecennas sed diam egent risus</li>
+					</ul>
+					<img style='height: 100px;' class='col-md-6' src='img/1.jpg'>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='col-md-7'>
+					<p><span class='h3'>Images show  </span>From Detail</p>
+					<div class='row'>
+						<img class='col-md-4' src='img/2.jpg'>
+						<img class='col-md-4' src='img/2.jpg'>
+						<img class='col-md-4' src='img/2.jpg'>
+					</div>
+					<p>Bootstrap was made to not only look and behave great in the latest desktop browsers , 
+						but in tablet and smartphone browsers via responsive CSS as well.</p>
+				</div>
+				<div class='col-md-5'>
+					<p><span class='h3'>User Login </span>From</p>
+					<form role='form' class='form-horizontal'>
+						<div class='form-group has-feedback'>
+							<lable for='in1' class='col-sm-2 control-label'><dt>Email</dt></lable>
+							<div class='col-sm-10'>
+								<input id='in1' type='email' placeholder="Emaill" class='form-control'>
+							</div>
+						</div>
+						<div class='form-group has-feedback'>
+							<lable for='in1' class='col-sm-2 control-label'><dt>Password</dt></lable>
+							<div class='col-sm-10'>
+								<input id='in1' type='email' placeholder="Password" class='form-control'>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-md-10">
+								<div class="checkbox">
+									<label><input type="checkbox">blue</label>
+									<label><input type="checkbox">red</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-info">Sign in</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer class='navbar navbar-inverse' role='navigation' style='border-radius: 0px;'>
+			<a href='#' style='color:white'>网站地图</a><a href='#' style='float:right'>返回首页</a>	
+			<p  style='color:white'>Copyright<a href='#'>www.xxx.xom</a></p>
+	    </footer>
+	</body>
+	<script src="js/jQuery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</html>
